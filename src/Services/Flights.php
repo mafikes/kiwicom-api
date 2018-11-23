@@ -1,25 +1,21 @@
 <?php
 
-namespace Mafikes\KiwiApi\Model;
+namespace Mafikes\KiwiApi\Services;
 
 use Mafikes\KiwiApi\Client;
 
 /**
- * Class Locations
+ * Class Flights
  * Doc: https://docs.kiwi.com/locations/
  *
  * @package Mafikes\KiwiApi\Model
  */
-class Locations
+class Flights implements IService
 {
-
-    /**
-     * @var Client
-     */
     private $client;
 
     /**
-     * Locations constructor.
+     * Service constructor.
      * @param Client $client
      */
     public function __construct(Client $client)
@@ -27,9 +23,14 @@ class Locations
         $this->client = $client;
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function searchByQuery($data)
     {
-        return $this->client->get('locations', $data);
+        return $this->client->get('flights', $data);
     }
 
 }
