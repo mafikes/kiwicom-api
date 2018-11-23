@@ -27,19 +27,6 @@ $client->getLocations()->searchByQuery([
 ]);
 ```
 
-#### Locations query with type
-```php
-$client->getLocations()->searchByQuery([
-    'type' => 'radius',
-    'term' => 'PRG',
-    'locale' => 'en-US',
-    'location_types' => 'airport',
-    'limit' => '10',
-    'active_only' => 'true',
-    'sort' => 'name'
-]);
-```
-
 #### Get all airlines
 ```php
 $client->getAirlines()->getAll();
@@ -50,7 +37,7 @@ $client->getAirlines()->getAll();
 $client->getAirlines()->getImage('JQ'); // id airline
 ```
 
-#### GBasic query for flights
+#### Get basic query for flights
 ```php
 $client->getFlights()->searchByQuery([
     'fly_from' => 'PRG',
@@ -62,4 +49,13 @@ $client->getFlights()->searchByQuery([
 ```
 
 More examples you can find in example folder.
+
+Todo
+------------
+- search deeplink
+- check flights
+- save booking
+- confirm payment
+- webhooks
+
 
